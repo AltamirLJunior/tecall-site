@@ -276,6 +276,15 @@ section {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* PLATAFORMA */
+#plataforma {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.plataforma-inner { max-width: 1100px; margin: 0 auto; }
+.plataforma-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1100px) { .plataforma-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .plataforma-grid { grid-template-columns: 1fr; } }
+
 /* COMO FUNCIONA */
 #como {
   background: var(--surface);
@@ -438,6 +447,8 @@ footer {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   section, #hero, #cta { padding: 4rem 1.5rem; }
+  #solucao-wrap { padding: 0; }
+  .modulos-grid { grid-template-columns: 1fr; }
   .problema-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   footer { flex-direction: column; text-align: center; }
   .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
@@ -456,6 +467,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#problema">O Problema</a></li>
     <li><a href="#solucao-wrap">Solução</a></li>
+    <li><a href="#plataforma">Plataforma</a></li>
     <li><a href="#como">Como Funciona</a></li>
     <li><a href="#diferenciais">Diferenciais</a></li>
     <li><a href="#eventos">Eventos</a></li>
@@ -492,7 +504,7 @@ footer {
         <div class="stat-label">anos de experiência em ERP</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">8<span>+</span></div>
+        <div class="stat-num">9<span>+</span></div>
         <div class="stat-label">segmentos atendidos</div>
       </div>
       <div class="stat-item">
@@ -500,8 +512,8 @@ footer {
         <div class="stat-label">sob medida para cada cliente</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">0<span>h</span></div>
-        <div class="stat-label">de downtime nos clientes ativos</div>
+        <div class="stat-num">24<span>h</span></div>
+        <div class="stat-label">de automações em segundo plano</div>
       </div>
     </div>
   </div>
@@ -603,7 +615,7 @@ footer {
       <div class="modulo-icon-wrap">📊</div>
       <div class="modulo-name">Painéis Gerenciais</div>
       <div class="modulo-desc">Dashboards estratégicos com os indicadores que importam para a sua gestão — vendas, produção, estoque e financeiro em uma única visão.</div>
-      <span class="modulo-tag">→ Gestão</span>
+      <span class="modulo-tag">→ Gestão · no BiAll</span>
     </div>
     <div class="modulo-card">
       <div class="modulo-icon-wrap">⚙️</div>
@@ -614,6 +626,43 @@ footer {
   </div>
 </section>
 </div>
+
+<!-- PLATAFORMA: APP, BI, APIs, IA -->
+<section id="plataforma">
+  <div class="plataforma-inner">
+    <div class="section-label">// plataforma sysall</div>
+    <div class="divider"></div>
+    <h2 class="section-title">O SysALL fora da<br>tela do escritório</h2>
+    <p class="section-sub">Os dados do seu ERP no celular, nos painéis de gestão, nos sistemas parceiros e nos assistentes de IA, sempre com o acesso que você liberar.</p>
+
+    <div class="modulos-grid plataforma-grid fade-up">
+      <div class="modulo-card">
+        <div class="modulo-icon-wrap">📱</div>
+        <div class="modulo-name">AppALL</div>
+        <div class="modulo-desc">Aprovações e consultas pelo celular. Pedidos, compras e liberações aprovados de qualquer lugar, com aviso na hora, sem esperar alguém abrir o sistema.</div>
+        <span class="modulo-tag">→ Gestão / Diretoria</span>
+      </div>
+      <div class="modulo-card">
+        <div class="modulo-icon-wrap">📈</div>
+        <div class="modulo-name">BiAll</div>
+        <div class="modulo-desc">Indicadores de vendas, produção, estoque e financeiro no celular e no computador, lidos direto da base do seu ERP.</div>
+        <span class="modulo-tag">→ Gestão / BI</span>
+      </div>
+      <div class="modulo-card">
+        <div class="modulo-icon-wrap">🔌</div>
+        <div class="modulo-name">APIs de Integração</div>
+        <div class="modulo-desc">Um endereço seguro, com chave de acesso, para o seu e-commerce, força de vendas ou sistema parceiro consultar e enviar dados ao ERP: pedidos, estoque, produtos e ordens de produção.</div>
+        <span class="modulo-tag">→ TI / Integrações</span>
+      </div>
+      <div class="modulo-card">
+        <div class="modulo-icon-wrap">🤖</div>
+        <div class="modulo-name">Integração com IA</div>
+        <div class="modulo-desc">Pergunte em português e a IA consulta os dados da sua empresa, com segurança e só o que você liberar. Pronto para o Claude e aberto a outros assistentes de IA.</div>
+        <span class="modulo-tag">→ Inovação</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- COMO FUNCIONA -->
 <section id="como">
