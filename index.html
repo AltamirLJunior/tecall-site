@@ -308,6 +308,29 @@ section {
 #hero .hero-stats { border-top-color: rgba(207,230,255,0.15); }
 .hero-arte img { width: 100%; height: auto; display: block;
   }
+/* PORTFÓLIO */
+#portfolio { border-top: 1px solid rgba(255,255,255,0.05); }
+.port-inner { max-width: 1100px; margin: 0 auto; }
+.port-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 1.5rem; margin-top: 3rem; }
+.port-card { flex: 0 1 calc((100% - 3rem) / 3); display: flex; flex-direction: column; }
+.port-img { display: block; padding: 0; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; overflow: hidden; cursor: zoom-in; background: #0b2a4f; transition: transform .2s, border-color .2s; }
+.port-img:hover, .port-img:focus-visible { transform: translateY(-3px); border-color: var(--accent); outline: none; }
+.port-img img { display: block; width: 100%; height: auto; }
+.port-prod { margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-light); }
+.port-nome { margin: .35rem 0 .5rem; font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+.port-msg { color: var(--text-muted); font-size: .92rem; line-height: 1.6; flex: 1; }
+.port-wa { margin-top: .9rem; align-self: flex-start; color: #48d6f0; font-size: .9rem; font-weight: 600; text-decoration: none; }
+.port-wa:hover { text-decoration: underline; }
+.port-zoom { margin: auto; inset: 0; padding: 0; border: none; background: transparent; max-width: 100vw; max-height: 100vh; overflow: visible; }
+.port-zoom::backdrop { background: rgba(5,12,24,0.88); }
+.port-zoom img { display: block; width: min(92vw, 92vh, 1100px); height: auto; border-radius: 12px; }
+.port-zoom button { position: fixed; border: none; background: rgba(255,255,255,0.12); color: #fff; width: 48px; height: 48px; border-radius: 50%; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.port-zoom button:hover { background: rgba(255,255,255,0.25); }
+.pz-fechar { top: 16px; right: 16px; }
+.pz-ant { left: 16px; top: 50%; transform: translateY(-50%); }
+.pz-prox { right: 16px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 1000px) { .port-card { flex-basis: calc((100% - 1.5rem) / 2); } }
+@media (max-width: 600px) { .port-card { flex-basis: 100%; } .pz-ant, .pz-prox { top: auto; bottom: 16px; transform: none; } }
 /* PLATAFORMA */
 #plataforma {
   border-top: 1px solid rgba(255,255,255,0.05);
@@ -500,6 +523,7 @@ footer {
     <li><a href="#problema">O Problema</a></li>
     <li><a href="#solucao-wrap">Solução</a></li>
     <li><a href="#plataforma">Plataforma</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
     <li><a href="#como">Como Funciona</a></li>
     <li><a href="#diferenciais">Diferenciais</a></li>
     <li><a href="#eventos">Eventos</a></li>
@@ -647,7 +671,7 @@ footer {
       <div class="modulo-icon-wrap">📊</div>
       <div class="modulo-name">Painéis Gerenciais</div>
       <div class="modulo-desc">Dashboards estratégicos com os indicadores que importam para a sua gestão — vendas, produção, estoque e financeiro em uma única visão.</div>
-      <span class="modulo-tag">→ Gestão · no BiAll</span>
+      <span class="modulo-tag">→ Gestão · no BiALL</span>
     </div>
     <div class="modulo-card">
       <div class="modulo-icon-wrap">⚙️</div>
@@ -676,7 +700,7 @@ footer {
       </div>
       <div class="modulo-card">
         <div class="modulo-icon-wrap">📈</div>
-        <div class="modulo-name">BiAll</div>
+        <div class="modulo-name">BiALL</div>
         <div class="modulo-desc">Indicadores de vendas, produção, estoque e financeiro no celular e no computador, lidos direto da base do seu ERP.</div>
         <span class="modulo-tag">→ Gestão / BI</span>
       </div>
@@ -694,6 +718,87 @@ footer {
       </div>
     </div>
   </div>
+</section>
+
+<!-- PORTFÓLIO: cartões do catálogo (Midia\Catalogo, 01 a 07; a capa fica só no WhatsApp) -->
+<section id="portfolio">
+  <div class="port-inner">
+    <div class="section-label">// portfólio</div>
+    <div class="divider"></div>
+    <h2 class="section-title">O SysALL no<br>dia a dia</h2>
+    <p class="section-sub">Telas reais dos nossos sistemas, com dados fictícios. Toque em um cartão para ver em tamanho grande.</p>
+    <div class="port-grid fade-up">
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="0" data-g="img/portfolio/01_sysall_nf_g.webp" aria-label="Ampliar: SysALL - Nota fiscal de entrada sem digitação">
+          <img src="img/portfolio/01_sysall_nf.webp" alt="Cartão do SysALL mostrando o fluxo fornecedor, motor e chegada, e a tela das notas de entrada com o campo de leitura do código do DANFE." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">SysALL</div>
+        <h3 class="port-nome">Nota fiscal de entrada sem digitação</h3>
+        <p class="port-msg">A nota fiscal de entrada chega e o SysALL já faz a entrada no ERP, sem ninguém digitar. Quando o produto chega, é só ler o QR Code do DANFE para confirmar.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20SysALL%20-%20Nota%20fiscal%20de%20entrada%20sem%20digita%C3%A7%C3%A3o.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="1" data-g="img/portfolio/02_appall_pedido_g.webp" aria-label="Ampliar: AppALL - Pedido de compra aprovado pelo celular">
+          <img src="img/portfolio/02_appall_pedido.webp" alt="Cartão do AppALL com dois celulares: a tela de módulos com Pedido de Compra em destaque e a tela de aprovação com os botões Rejeitar e Aprovar." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">AppALL</div>
+        <h3 class="port-nome">Pedido de compra aprovado pelo celular</h3>
+        <p class="port-msg">O comprador lança o pedido, os aprovadores recebem o aviso no WhatsApp e aprovam ou rejeitam pelo celular. A decisão volta direto para o ERP. Disponível para Android.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20AppALL%20-%20Pedido%20de%20compra%20aprovado%20pelo%20celular.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="2" data-g="img/portfolio/03_biall_dfe_g.webp" aria-label="Ampliar: BiALL - Documentos fiscais em tempo real">
+          <img src="img/portfolio/03_biall_dfe.webp" alt="Cartão do BiALL com o painel DF-e aberto no navegador: saúde do serviço por unidade, notas integradas e pendentes e gráfico de notas por dia." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">BiALL</div>
+        <h3 class="port-nome">Documentos fiscais em tempo real</h3>
+        <p class="port-msg">As notas que o motor baixa e integra aparecem em um painel na web: quantas chegaram, quantas entraram no ERP e o que ficou pendente.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20BiALL%20-%20Documentos%20fiscais%20em%20tempo%20real.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="3" data-g="img/portfolio/04_biall_assistente_g.webp" aria-label="Ampliar: BiALL - Assistente de dados com IA">
+          <img src="img/portfolio/04_biall_assistente.webp" alt="Cartão do BiALL com o assistente de dados: uma pergunta sobre apontamentos e faturamento de um produto, respondida com tabela e valores." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">BiALL</div>
+        <h3 class="port-nome">Assistente de dados com IA</h3>
+        <p class="port-msg">Dentro do painel, você pergunta em português e a IA responde com os dados do ERP, em tabela, mostrando o período e os critérios que usou.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20BiALL%20-%20Assistente%20de%20dados%20com%20IA.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="4" data-g="img/portfolio/05_ia_financeiro_g.webp" aria-label="Ampliar: IA - O Claude conversa com o seu ERP (financeiro)">
+          <img src="img/portfolio/05_ia_financeiro.webp" alt="Cartão de IA com uma conversa no Claude: pergunta sobre clientes com títulos vencidos e pedidos em carteira, respondida com tabela de cinco clientes e resumo." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">IA</div>
+        <h3 class="port-nome">O Claude conversa com o seu ERP (financeiro)</h3>
+        <p class="port-msg">O Claude é um assistente de inteligência artificial. Ligado ao ERP, ele responde perguntas como &quot;quais clientes têm títulos vencidos e pedidos em aberto?&quot;, com tabela e resumo.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20IA%20-%20O%20Claude%20conversa%20com%20o%20seu%20ERP%20%28financeiro%29.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="5" data-g="img/portfolio/06_ia_faturamento_g.webp" aria-label="Ampliar: IA - Pergunte ao Claude sobre as vendas (faturamento)">
+          <img src="img/portfolio/06_ia_faturamento.webp" alt="Cartão de IA com uma conversa no Claude: pergunta sobre clientes que pararam de comprar, respondida com tabela e resumo." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">IA</div>
+        <h3 class="port-nome">Pergunte ao Claude sobre as vendas (faturamento)</h3>
+        <p class="port-msg">Outra pergunta para o Claude ligado ao ERP: &quot;quais clientes compravam todo mês e pararam?&quot;. Ele mostra quem parou de comprar, quem cresceu e quem caiu.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20IA%20-%20Pergunte%20ao%20Claude%20sobre%20as%20vendas%20%28faturamento%29.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+      <article class="port-card">
+        <button type="button" class="port-img" data-i="6" data-g="img/portfolio/07_sysall_sequenciamento_g.webp" aria-label="Ampliar: SysALL - Fila de produção sugerida pela IA">
+          <img src="img/portfolio/07_sysall_sequenciamento.webp" alt="Cartão do SysALL com a tela de sugestão de fila de ordens de fabricação: sequência atual, sequência sugerida pela IA com datas e o botão Efetivar Sugestão." width="800" height="800" loading="lazy">
+        </button>
+        <div class="port-prod">SysALL</div>
+        <h3 class="port-nome">Fila de produção sugerida pela IA</h3>
+        <p class="port-msg">O PCP pede a sugestão, a IA lê as ordens de fabricação e devolve a sequência com início e fim de cada uma. A fila só muda quando o PCP efetiva.</p>
+        <a class="port-wa" href="https://wa.me/551931671103?text=Ol%C3%A1%21%20Vi%20no%20site%20da%20Tec%26All%3A%20SysALL%20-%20Fila%20de%20produ%C3%A7%C3%A3o%20sugerida%20pela%20IA.%20Quero%20saber%20mais." target="_blank" rel="noopener">Conversar sobre isto →</a>
+      </article>
+    </div>
+  </div>
+  <dialog class="port-zoom" aria-label="Cartão ampliado">
+    <button type="button" class="pz-fechar" aria-label="Fechar">×</button>
+    <button type="button" class="pz-ant" aria-label="Anterior">‹</button>
+    <img alt="">
+    <button type="button" class="pz-prox" aria-label="Próximo">›</button>
+  </dialog>
 </section>
 
 <!-- COMO FUNCIONA -->
@@ -883,6 +988,20 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script>
+(() => {
+  const dlg = document.querySelector('.port-zoom'); if (!dlg) return;
+  const btns = [...document.querySelectorAll('.port-img')]; const img = dlg.querySelector('img'); let atual = 0;
+  const mostra = i => { atual = (i + btns.length) % btns.length; const b = btns[atual]; img.src = b.dataset.g; img.alt = b.querySelector('img').alt; };
+  btns.forEach((b, i) => b.addEventListener('click', () => { mostra(i); dlg.showModal(); }));
+  dlg.querySelector('.pz-fechar').onclick = () => dlg.close();
+  dlg.querySelector('.pz-ant').onclick = () => mostra(atual - 1);
+  dlg.querySelector('.pz-prox').onclick = () => mostra(atual + 1);
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') mostra(atual - 1); if (e.key === 'ArrowRight') mostra(atual + 1); });
+})();
 </script>
 </body>
 </html>
